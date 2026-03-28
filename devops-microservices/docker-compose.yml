@@ -18,4 +18,4 @@ services:
   order:
     build: ./order-service
     ports:
-      - "3004:3000"
+      - "3004:8080"
