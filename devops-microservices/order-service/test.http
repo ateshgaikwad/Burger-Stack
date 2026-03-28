@@ -1,0 +1,16 @@
+### Health Check
+GET http://localhost:3004/health
+
+
+### Create Order
+POST http://localhost:3004/orders
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "productId": 1
+}
+
+
+### Get Order
+GET http://localhost:3004/orders/1
