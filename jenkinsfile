@@ -10,9 +10,9 @@ pipeline {
         }
         stage('compose'){
             steps {
-              sh "docker-compose -f devops-microservices/docker-compose.yml build "
-`                }
-                }
+              sh "docker-compose -f devops-microservices/docker-compose.yml build " 
+            }
+        }
         stage('Run') {
             steps {
                 sh 'docker-compose -f devops-microservices/docker-compose.yml up'
