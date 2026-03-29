@@ -2,12 +2,6 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/ateshgaikwad/Burger-Stack.git'
-            }
-        }
-
         stage('Build') {
             steps {
                 sh 'docker-compose build'
