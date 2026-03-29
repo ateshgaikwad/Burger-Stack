@@ -8,18 +8,5 @@ pipeline {
                 checkout scm
             }
         }
-
-        stage('Start') {
-            steps {
-                sh 'docker-compose up -d'
-            }
-        }
-
-        stage('Stop') {
-            steps {
-                sh 'docker-compose down'
-            }
-        }
-
-    }
+}
 }
