@@ -8,5 +8,8 @@ pipeline {
                 checkout scm
             }
         }
+        stage('compose'){
+            steps {
+              sh "cd devops-microservices && docker-compose up --build -d"
 }
 }
