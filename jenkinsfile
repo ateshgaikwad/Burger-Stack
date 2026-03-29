@@ -2,28 +2,24 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+
+        stage('Checkout') {
             steps {
-                sh 'docker-compose build'
+                checkout scm
             }
         }
 
-        stage('Run') {
+        stage('Start') {
             steps {
-                sh 'docker-compose up -d'
+                sh 'docker compose up -d'
             }
         }
 
-        stage('Test') {
+        stage('Stop') {
             steps {
-                sh 'docker ps'
+                sh 'docker compose down'
             }
         }
 
-        stage('Cleanup') {
-            steps {
-                sh 'docker-compose down'
-            }
-        }
     }
 }
