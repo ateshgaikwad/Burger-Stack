@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: auth-deployment
+  labels:
+    app: auth-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: auth-deployment
+  template:
+    metadata:
+      labels:
+        app: auth-deployment
+    spec:
+      containers:
+      - name: auth-1
+        image: ateshgaikwad/auth-service:v1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3000
