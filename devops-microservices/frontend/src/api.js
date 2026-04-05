@@ -1,8 +1,8 @@
 const API = {
-  auth: "http://localhost:3001",
-  user: "http://localhost:3002",
-  product: "http://localhost:3003",
-  order: "http://localhost:3004"
+  auth: "http://localhost:8080",
+  user: "http://localhost:8080/users",
+  product: "http://localhost:8080/products",
+  order: "http://localhost:8080/orders"
 };
 
 export async function login() {

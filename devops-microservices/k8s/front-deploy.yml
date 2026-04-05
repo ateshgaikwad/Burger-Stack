@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: front-1
-        image: ateshgaikwad/front-service:v1
+        image: ateshgaikwad/front-service:v3
         imagePullPolicy: Always
         ports:
-        - containerPort: 3000
+        - containerPort: 80

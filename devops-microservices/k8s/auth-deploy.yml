@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: auth-1
-        image: ateshgaikwad/auth-service:v1
+        image: ateshgaikwad/auth-service:v2
         imagePullPolicy: Always
         ports:
         - containerPort: 3000

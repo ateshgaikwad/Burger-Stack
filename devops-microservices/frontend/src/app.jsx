@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
 const API = {
-  auth: "http://localhost:3001",
-  user: "http://localhost:3002",
-  product: "http://localhost:3003",
-  order: "http://localhost:3004"
+  auth: "http://localhost:8080",
+  user: "http://localhost:8080/users",
+  product: "http://localhost:8080/products",
+  order: "http://localhost:8080/orders"
 };
 
 async function login() {
@@ -17,12 +17,12 @@ async function login() {
 }
 
 async function getProducts() {
-  const res = await fetch(`${API.product}/products`);
+  const res = await fetch(`${API.product}`);
   return res.json();
 }
 
 async function createOrder() {
-  const res = await fetch(`${API.order}/orders`, { method: "POST" });
+  const res = await fetch(`${API.order}`, { method: "POST" });
   return res.text();
 }
 
@@ -502,7 +502,7 @@ export default function App() {
       emoji: "🔐",
       title: "Authenticate",
       desc: "Sign in via the auth service and receive a JWT token.",
-      tag: "POST /login",
+      tag: "POST /auth/login",
       fn: login
     },
     {
@@ -586,10 +586,10 @@ export default function App() {
             {/* Stats */}
             <div className="stats-row">
               {[
-                { icon: "🔐", value: "Auth", label: "Port 3001 · Node.js" },
-                { icon: "👤", value: "Users", label: "Port 3002 · FastAPI" },
-                { icon: "🍔", value: "Products", label: "Port 3003 · Node.js" },
-                { icon: "📋", value: "Orders", label: "Port 3004 · Spring" },
+                { icon: "🔐", value: "Auth", label: "/auth · Node.js" },
+                { icon: "👤", value: "Users", label: "/users · FastAPI" },
+                { icon: "🍔", value: "Products", label: "/products · Node.js" },
+                { icon: "📋", value: "Orders", label: "/orders · Spring" },
               ].map((s, i) => (
                 <div className="stat-card" key={i}>
                   <span className="stat-icon">{s.icon}</span>
